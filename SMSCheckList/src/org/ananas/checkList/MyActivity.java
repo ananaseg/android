@@ -46,6 +46,7 @@ public class MyActivity extends Activity
         {
             srcText = pasteData;
         }
+        ed.setText(srcText);
         String[] listItemsPrepare = srcText.replace(" и ", ",").replace(".", ",").replace("Купи", "").replace("купи", "").split(",");
         lid.clear();
         for (int i = 0; i < listItemsPrepare.length; i++)
