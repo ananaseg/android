@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">checkList</string>
+    <string name = "app_name">Список из СМС</string>
+    <string name = "exit">Выход</string>
+    <string name = "listcreation">Создание списка</string>
+    <string name = "listcreationcb">Создание списка из буфера обмена</string>
+    <string name = "delete_data">Удалить старый список и создать новый?</string>
+    <string name = "append_data">Пересоздать или добавить данные?</string>
+    <string name = "yes">Да</string>
+    <string name = "no">Нет</string>
+    <string name = "cancel">Отмена</string>
+    <string name = "saved">Сохранено</string>
+    <string name = "paste">Вставить</string>
+    <string name = "create">Создать</string>
+    <string name = "add">Добавить</string>
+    <string name = "recreate">Пересоздать</string>
+    <string name = "settings">Настройки</string>
+    <string name = "listView">Список</string>
 </resources>
