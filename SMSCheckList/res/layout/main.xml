@@ -1,101 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
 
-    <FrameLayout
+    <LinearLayout
+            android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
-        <TabHost
+            android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/textToParse"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="20" android:enabled="true" android:focusable="true"
+            android:focusableInTouchMode="true" android:singleLine="true" android:inputType="text"
+            android:layout_marginTop="1dp" android:layout_gravity="right|center_vertical">
+
+        </EditText>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnCreate"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent" android:id="@android:id/tabhost">
-            <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:orientation="vertical">
-                <TabWidget
-                        android:id="@android:id/tabs"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content" android:orientation="horizontal">
-                </TabWidget>
-                <FrameLayout
-                        android:id="@android:id/tabcontent"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent">
-                    <LinearLayout
-                            android:id="@+id/tab1"
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent">
-                        <FrameLayout
-                                android:layout_width="fill_parent"
-                                android:layout_height="fill_parent" android:id="@+id/tabView1">
-                            <LinearLayout
-                                    android:orientation="vertical"
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="fill_parent">
-                                <LinearLayout
-                                        android:layout_width="fill_parent"
-                                        android:layout_height="wrap_content">
-                                    <EditText
-                                        android:layout_width="fill_parent"
-                                        android:layout_height="match_parent"
-                                        android:id="@+id/textToParse"
-                                        android:layout_gravity="center" android:layout_weight="2"/>
-                                    <Button
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="fill_parent"
-                                            android:text="..."
-                                            android:id="@+id/btnCreate" android:layout_weight="1" android:onClick="btnPaste_click"/>
-                                </LinearLayout>
-                                <LinearLayout
-                                    android:orientation="horizontal"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_weight="1"
+                android:onClick="btnCreate_click"
+                android:text="@string/create"/>
+            <Button
+                android:id="@+id/btnCreate"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:onClick="btnPaste_click"
+                android:text="@string/paste"/>
 
-                                    <Button
-                                        android:layout_width="fill_parent"
-                                        android:layout_height="wrap_content"
-                                        android:text="@string/create"
-                                        android:id="@+id/btnCreate"
-                                        android:layout_gravity="center_horizontal|bottom"
-                                        android:layout_weight="1"
-                                        android:onClick="btnCreate_click" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp" android:orientation="vertical" android:layout_weight="1">
 
-                                    <Button
-                                        android:layout_width="fill_parent"
-                                        android:layout_height="wrap_content"
-                                        android:text="Выход"
-                                        android:id="@+id/btnClose"
-                                        android:onClick="btnClose_click"
-                                        android:layout_weight="1" />
-                                </LinearLayout>
-                            </LinearLayout>
-                        </FrameLayout>
-                    </LinearLayout>
-                    <LinearLayout
-                            android:id="@+id/tab2"
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent">
-                        <FrameLayout
-                                android:layout_width="fill_parent"
-                                android:layout_height="fill_parent" android:id="@+id/tabView2">
-                            <ListView
-                                android:focusable="true"
-                                android:focusableInTouchMode="true"
-                                android:layout_width="wrap_content"
-                                android:layout_height="140dp"
-                                android:id="@+id/listView"
-                                android:layout_gravity="right|center_vertical"
-                                android:layout_marginBottom="5dp"
-                                android:layout_weight="0.18"
-                                android:clickable="true" />
-                        </FrameLayout>
-                    </LinearLayout>
-                </FrameLayout>
-            </LinearLayout>
-        </TabHost>
-    </FrameLayout>
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true" android:layout_gravity="center_horizontal"
+            android:drawSelectorOnTop="true" android:divider="#a0a0a0"
+            android:dividerHeight="1dp">
+        </ListView>
 
+    </LinearLayout>
 </LinearLayout>
-

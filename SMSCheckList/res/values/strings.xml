@@ -17,4 +17,5 @@
     <string name = "settings">Настройки</string>
     <string name = "listView">Список</string>
     <string name = "tab_header">Табы</string>
+    <string name = "action_settings">Настройки</string>
 </resources>

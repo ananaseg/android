@@ -1,5 +1,6 @@
 package org.ananas.checkList;
 
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -8,8 +9,14 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.*;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -73,16 +80,21 @@ public class MyActivity extends Activity {
         String pasteData = "";
         ClipData.Item item = null;
         EditText ed = (EditText) findViewById(R.id.textToParse);
-        String srcText = ed.getText().toString();
-
-        if (clipboard.getPrimaryClip().getItemCount() > 0) {
+        String srcText = "";
+        if (!ed.getText().toString().equals("")) {
+            srcText = ed.getText().toString();
+        }
+        ;
+        if (clipboard.hasText() && (clipboard.getPrimaryClip().getItemCount() > 0)) {
             item = clipboard.getPrimaryClip().getItemAt(0);
             if (addText) pasteData = srcText + "," + item.getText().toString();
             else pasteData = item.getText().toString();
         }
         srcText = pasteData;
-        ed.setText(srcText);
-        setListItems(srcText);   //Создаем список
+        if (!srcText.equals("")) {
+            ed.setText(srcText);
+            setListItems(srcText);   //Создаем список
+        }
     }
 
     /**
@@ -224,6 +236,24 @@ public class MyActivity extends Activity {
         // присваиваем адаптер списку
         lv.setAdapter(adapter);
     }
-
-
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_exit:
+                finish();
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+    public void showToast(String message)
+    {
+        Toast toast = Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT);
+        toast.show();
+    }
 }
