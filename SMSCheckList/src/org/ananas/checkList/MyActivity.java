@@ -35,41 +35,11 @@ public class MyActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-//        TabHost tabHost = (TabHost) findViewById(android.R.id.tabhost);
-////инициализация
-//        tabHost.setup();
-//        TabHost.TabSpec tabSpec;
-////создаем вкладку и указываем тег
-//        tabSpec = tabHost.newTabSpec("tag1");
-////указываем id компонента из FrameLayout, он и станет содержимым
-//        tabSpec.setContent(R.id.tabView1);
-////добавляем в корневой элемент
-//        tabHost.addTab(tabSpec);
-//        tabSpec = tabHost.newTabSpec("tag2");
-////указываем название и картинку
-////в нашем случае вместо картинки идет xml-файл,
-////который определяет картинку посостоянию вкладки
-//        tabSpec.setContent(R.id.tabView2);
-////создаем View из layout-файла
-//        View v = getLayoutInflater().inflate(R.layout.tab_header, null);
-////и устанавливаем его, как заголовок
-//        tabSpec.setIndicator(v);
-////вторая вкладка будет выбрана по умолчанию
-//        tabHost.setCurrentTabByTag("tag2");
-////обработчик переключения вкладок
-//        tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
-//            public void onTabChanged(String tabId) {
-//                Toast.makeText(getBaseContext(), "tabId=" + tabId, Toast.LENGTH_SHORT).show();
-//            }
-//        });
         // находим список
         ListView lvMain = (ListView) findViewById(R.id.listView);
         setList(lvMain);
         lvMain.requestFocus();
-    }
-
-    public void btnClose_click(View v) {
-        this.finish();
+        pasteData(false);
     }
 
     /**
@@ -197,7 +167,7 @@ public class MyActivity extends Activity {
                     pasteData(false);  // если согласились перезаписать данные, то вставляем их из буфера
                     break;
                 case Dialog.BUTTON_NEUTRAL:
-                    pasteData(true);  // если согласились перезаписать данные, то вставляем их из буфера
+                    pasteData(true);  // если согласились добавить данные, то вставляем их из буфера
                     break;
                 //негаитвная кнопка
                 case Dialog.BUTTON_NEGATIVE:
