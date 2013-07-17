@@ -26,7 +26,7 @@ public class MyActivity extends Activity {
     List<ListItemData> lid = new ArrayList<ListItemData>();
     final int DIALOG_PASTE = 1;
     final int DIALOG_CREATE = 2;
-
+    ClipboardManager clipboard;
     /**
      * Called when the activity is first created.
      */
@@ -39,14 +39,16 @@ public class MyActivity extends Activity {
         ListView lvMain = (ListView) findViewById(R.id.listView);
         setList(lvMain);
         lvMain.requestFocus();
-        pasteData(false);
+        clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+        if (clipboard.hasText()) {
+            pasteData(false);
+        }
     }
 
     /**
      * Вставка данных из буфера и формирование списка
      */
     protected void pasteData(boolean addText) {
-        ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
         String pasteData = "";
         ClipData.Item item = null;
         EditText ed = (EditText) findViewById(R.id.textToParse);
@@ -58,7 +60,9 @@ public class MyActivity extends Activity {
         if (clipboard.hasText() && (clipboard.getPrimaryClip().getItemCount() > 0)) {
             item = clipboard.getPrimaryClip().getItemAt(0);
             if (addText) pasteData = srcText + "," + item.getText().toString();
-            else pasteData = item.getText().toString();
+            else {
+                pasteData = item.getText().toString();
+            }
         }
         srcText = pasteData;
         if (!srcText.equals("")) {
@@ -206,12 +210,14 @@ public class MyActivity extends Activity {
         // присваиваем адаптер списку
         lv.setAdapter(adapter);
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -221,8 +227,8 @@ public class MyActivity extends Activity {
                 return super.onOptionsItemSelected(item);
         }
     }
-    public void showToast(String message)
-    {
+
+    public void showToast(String message) {
         Toast toast = Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT);
         toast.show();
     }
