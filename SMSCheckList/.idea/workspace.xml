@@ -27,6 +27,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8bdb27d4-f7cf-44a5-b71e-4bd8812867d9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/ananas/checkList/CustomAdapter.java" afterPath="$PROJECT_DIR$/src/org/ananas/checkList/CustomAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/ananas/checkList/MyActivity.java" afterPath="$PROJECT_DIR$/src/org/ananas/checkList/MyActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/checked_list_item.xml" afterPath="$PROJECT_DIR$/res/layout/checked_list_item.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/main.xml" afterPath="$PROJECT_DIR$/res/layout/main.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -92,10 +95,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MyActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MyActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/org/ananas/checkList/MyActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="81" column="91" selection-start="2523" selection-end="2523" vertical-scroll-proportion="0.0" vertical-offset="1360" max-vertical-offset="4097">
+            <state line="92" column="251" selection-start="2848" selection-end="2848" vertical-scroll-proportion="0.024853801" vertical-offset="1207" max-vertical-offset="3961">
               <folding />
             </state>
           </provider>
@@ -113,21 +116,9 @@
       <file leaf-file-name="ListItemData.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/ananas/checkList/ListItemData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="9" selection-start="982" selection-end="982" vertical-scroll-proportion="0.0" vertical-offset="965" max-vertical-offset="1649">
+            <state line="60" column="9" selection-start="982" selection-end="982" vertical-scroll-proportion="0.0" vertical-offset="761" max-vertical-offset="1649">
               <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-          <provider editor-type-id="text-editor">
-            <state line="43" column="10" selection-start="1778" selection-end="1778" vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="1122">
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="android-designer">
-            <state />
           </provider>
         </entry>
       </file>
@@ -141,18 +132,9 @@
         </entry>
       </file>
       <file leaf-file-name="main.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/menu/main.xml">
+        <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="39" selection-start="344" selection-end="344" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="checked_list_item.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/checked_list_item.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="4" selection-start="238" selection-end="238" vertical-scroll-proportion="-4.76" vertical-offset="0" max-vertical-offset="459">
+            <state line="16" column="34" selection-start="625" selection-end="625" vertical-scroll-proportion="-2.72" vertical-offset="204" max-vertical-offset="1360">
               <folding />
             </state>
           </provider>
@@ -161,15 +143,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomAdapter.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="checked_list_item.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/checked_list_item.xml">
+          <provider editor-type-id="text-editor">
+            <state line="47" column="0" selection-start="1310" selection-end="1310" vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="901">
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomAdapter.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/ananas/checkList/CustomAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="89" selection-start="1977" selection-end="1977" vertical-scroll-proportion="0.2997076" vertical-offset="696" max-vertical-offset="1581">
+            <state line="79" column="41" selection-start="2513" selection-end="2513" vertical-scroll-proportion="0.0" vertical-offset="696" max-vertical-offset="1581">
               <folding>
                 <element signature="e#2076#2442#0" expanded="true" />
                 <element signature="e#2431#2432#0" expanded="true" />
-                <element signature="e#2742#3012#0" expanded="true" />
-                <element signature="e#3001#3002#0" expanded="true" />
+                <element signature="e#2739#3009#0" expanded="true" />
+                <element signature="e#2998#2999#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -202,11 +196,11 @@
         <option value="$PROJECT_DIR$/res/layout/fragment_main_dummy.xml" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/org/ananas/checkList/MyActivity.java" />
         <option value="$PROJECT_DIR$/res/menu/main.xml" />
+        <option value="$PROJECT_DIR$/src/org/ananas/checkList/CustomAdapter.java" />
         <option value="$PROJECT_DIR$/res/layout/checked_list_item.xml" />
         <option value="$PROJECT_DIR$/res/layout/main.xml" />
-        <option value="$PROJECT_DIR$/src/org/ananas/checkList/CustomAdapter.java" />
+        <option value="$PROJECT_DIR$/src/org/ananas/checkList/MyActivity.java" />
       </list>
     </option>
   </component>
@@ -372,10 +366,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="AndroidLayoutSelectedEditor" value="android-designer" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="emulator-5554" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="10.0.0.82:5555" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="gal" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
@@ -596,7 +591,11 @@
       <created>1374059551321</created>
       <updated>1374059551321</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="нажатие по пункту списка">
+      <created>1374059969003</created>
+      <updated>1374059969003</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -611,7 +610,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39846322" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22063667" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.169045" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -719,7 +718,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="звездочки" />
+    <option name="LAST_COMMIT_MESSAGE" value="нажатие по пункту списка" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -739,6 +738,7 @@
     <MESSAGE value="убил табы добавил меню" />
     <MESSAGE value="при старте сразу подхватывается содержимое клипбоарда" />
     <MESSAGE value="звездочки" />
+    <MESSAGE value="нажатие по пункту списка" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -754,8 +754,8 @@
           <folding>
             <element signature="e#2076#2442#0" expanded="true" />
             <element signature="e#2431#2432#0" expanded="true" />
-            <element signature="e#2742#3012#0" expanded="true" />
-            <element signature="e#3001#3002#0" expanded="true" />
+            <element signature="e#2739#3009#0" expanded="true" />
+            <element signature="e#2998#2999#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -806,13 +806,6 @@
         <state line="3608" column="0" selection-start="134199" selection-end="134199" vertical-scroll-proportion="0.3326923" vertical-offset="59820" max-vertical-offset="251532" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/ananas/checkList/MyActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="91" selection-start="2523" selection-end="2523" vertical-scroll-proportion="0.0" vertical-offset="790" max-vertical-offset="4029">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="46" selection-start="996" selection-end="996" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
@@ -827,31 +820,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/checked_list_item.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="4" selection-start="238" selection-end="238" vertical-scroll-proportion="-4.76" vertical-offset="0" max-vertical-offset="459">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/menu/main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="39" selection-start="344" selection-end="344" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-      <provider editor-type-id="text-editor">
-        <state line="43" column="10" selection-start="1778" selection-end="1778" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1105">
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/ananas/checkList/ListItemData.java">
@@ -863,13 +836,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/ananas/checkList/CustomAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="89" selection-start="1977" selection-end="1977" vertical-scroll-proportion="0.2997076" vertical-offset="696" max-vertical-offset="1581">
+        <state line="79" column="41" selection-start="2513" selection-end="2513" vertical-scroll-proportion="0.0" vertical-offset="696" max-vertical-offset="1581">
           <folding>
             <element signature="e#2076#2442#0" expanded="true" />
             <element signature="e#2431#2432#0" expanded="true" />
-            <element signature="e#2742#3012#0" expanded="true" />
-            <element signature="e#3001#3002#0" expanded="true" />
+            <element signature="e#2739#3009#0" expanded="true" />
+            <element signature="e#2998#2999#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/checked_list_item.xml">
+      <provider editor-type-id="text-editor">
+        <state line="47" column="0" selection-start="1310" selection-end="1310" vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="901">
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="34" selection-start="625" selection-end="625" vertical-scroll-proportion="-2.72" vertical-offset="204" max-vertical-offset="1360">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/ananas/checkList/MyActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="251" selection-start="2848" selection-end="2848" vertical-scroll-proportion="0.024853801" vertical-offset="1207" max-vertical-offset="3961">
+          <folding />
         </state>
       </provider>
     </entry>

@@ -77,9 +77,9 @@ public class CustomAdapter extends ArrayAdapter<ListItemData> {
             }
         });
         if (lid.checked) {
-            title.setTextColor(Color.DKGRAY);
+            title.setTextColor(Color.GRAY);
         } else {
-            title.setTextColor(Color.YELLOW);
+            title.setTextColor(Color.WHITE);
         }
         CheckBox check = (CheckBox) view.findViewById(R.id.checkBox);
         check.setChecked(lid.checked);

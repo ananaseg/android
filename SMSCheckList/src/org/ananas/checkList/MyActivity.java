@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -38,11 +39,11 @@ public class MyActivity extends Activity {
         // находим список
         ListView lvMain = (ListView) findViewById(R.id.listView);
         setList(lvMain);
-        lvMain.requestFocus();
         clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
         if (clipboard.hasText()) {
             pasteData(false);
         }
+
     }
 
     /**
@@ -69,6 +70,7 @@ public class MyActivity extends Activity {
             ed.setText(srcText);
             setListItems(srcText);   //Создаем список
         }
+        hideKeyboard();
     }
 
     /**
@@ -79,6 +81,7 @@ public class MyActivity extends Activity {
         String srcText = ed.getText().toString();
         ed.setText(srcText);
         setListItems(srcText);   //Создаем список
+        hideKeyboard();
     }
 
     /**
@@ -100,6 +103,15 @@ public class MyActivity extends Activity {
         lvMain.invalidateViews();
     }
 
+    void hideKeyboard(){
+        ListView lvMain = (ListView) findViewById(R.id.listView);
+        lvMain.requestFocus();
+        InputMethodManager imm = (InputMethodManager)
+                getSystemService(Context.INPUT_METHOD_SERVICE);
+        EditText ed = (EditText) findViewById(R.id.textToParse);
+        imm.hideSoftInputFromWindow(ed.getWindowToken(), 0);
+    }
+
     /**
      * Обработка кнопки вставки из буфера
      *
@@ -107,6 +119,8 @@ public class MyActivity extends Activity {
      */
     public void btnPaste_click(View v) {
         showDialog(DIALOG_PASTE);
+        ListView lvMain = (ListView) findViewById(R.id.listView);
+        hideKeyboard();
     }
 
     /**
@@ -116,6 +130,8 @@ public class MyActivity extends Activity {
      */
     public void btnCreate_click(View v) {
         showDialog(DIALOG_CREATE);
+        ListView lvMain = (ListView) findViewById(R.id.listView);
+        hideKeyboard();
     }
 
     /**
