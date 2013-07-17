@@ -63,6 +63,19 @@ public class CustomAdapter extends ArrayAdapter<ListItemData> {
 
         TextView title = (TextView) view.findViewById(R.id.item_text);
         title.setText(lid.item);
+        final int i = position;
+        title.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (lid.checked) {
+                    lid.checked = false;
+                } else {
+                    lid.checked = true;
+                }
+                data.get(i).checked = lid.checked;
+                notifyDataSetChanged();
+            }
+        });
         if (lid.checked) {
             title.setTextColor(Color.DKGRAY);
         } else {
@@ -70,7 +83,7 @@ public class CustomAdapter extends ArrayAdapter<ListItemData> {
         }
         CheckBox check = (CheckBox) view.findViewById(R.id.checkBox);
         check.setChecked(lid.checked);
-        final int i = position;
+
         check.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
