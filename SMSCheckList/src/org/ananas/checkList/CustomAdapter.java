@@ -4,10 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.TextView;
+import android.widget.*;
 
 import java.util.Collections;
 import java.util.List;
@@ -71,8 +68,8 @@ public class CustomAdapter extends ArrayAdapter<ListItemData> {
                     lid.checked = false;
                 } else {
                     lid.checked = true;
+                    showToast(data.get(i).item);
                 }
-                data.get(i).checked = lid.checked;
                 notifyDataSetChanged();
             }
         });
@@ -93,5 +90,10 @@ public class CustomAdapter extends ArrayAdapter<ListItemData> {
         });
 
         return view;
+    }
+    public void showToast(String message) {
+        Toast toast = Toast.makeText(this.getContext(), message, Toast.LENGTH_SHORT);
+        toast.setDuration(1);
+        toast.show();
     }
 }

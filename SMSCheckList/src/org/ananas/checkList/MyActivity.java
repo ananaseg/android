@@ -105,7 +105,7 @@ public class MyActivity extends Activity {
 
     void hideKeyboard(){
         ListView lvMain = (ListView) findViewById(R.id.listView);
-        lvMain.requestFocus();
+        lvMain.requestFocus(View.FOCUS_DOWN);
         InputMethodManager imm = (InputMethodManager)
                 getSystemService(Context.INPUT_METHOD_SERVICE);
         EditText ed = (EditText) findViewById(R.id.textToParse);
