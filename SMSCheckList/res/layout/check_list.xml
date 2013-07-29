@@ -5,7 +5,8 @@
     <ListView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:id="@+id/listView"
+        android:id="@+id/checkListView"
         android:layout_gravity="center"
-        android:headerDividersEnabled="true" />
+        android:headerDividersEnabled="false"
+        android:choiceMode="singleChoice"/>
 </LinearLayout>
