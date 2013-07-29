@@ -14,42 +14,51 @@ import java.util.List;
  * Date: 10.07.13
  * Time: 11:29
  */
-public class CustomAdapter extends ArrayAdapter<ListItemData> {
+public class CustomAdapter extends ArrayAdapter<ListItemData>
+{
     private List<ListItemData> data;
 
-    public CustomAdapter(Context context, int textViewResourceId) {
+    public CustomAdapter(Context context, int textViewResourceId)
+    {
         super(context, textViewResourceId);
     }
 
-    public CustomAdapter(Context context, int resource, int textViewResourceId) {
+    public CustomAdapter(Context context, int resource, int textViewResourceId)
+    {
         super(context, resource, textViewResourceId);
     }
 
-    public CustomAdapter(Context context, int textViewResourceId, ListItemData[] objects) {
+    public CustomAdapter(Context context, int textViewResourceId, ListItemData[] objects)
+    {
         super(context, textViewResourceId, objects);
     }
 
-    public CustomAdapter(Context context, int resource, int textViewResourceId, ListItemData[] objects) {
+    public CustomAdapter(Context context, int resource, int textViewResourceId, ListItemData[] objects)
+    {
         super(context, resource, textViewResourceId, objects);
     }
 
-    public CustomAdapter(Context context, int textViewResourceId, List<ListItemData> objects) {
+    public CustomAdapter(Context context, int textViewResourceId, List<ListItemData> objects)
+    {
         super(context, textViewResourceId, objects);
     }
 
-    public CustomAdapter(Context context, int resource, int textViewResourceId, List<ListItemData> objects) {
+    public CustomAdapter(Context context, int resource, int textViewResourceId, List<ListItemData> objects)
+    {
         super(context, resource, textViewResourceId, objects);
         data = objects;
     }
 
     @Override
-    public void notifyDataSetChanged() {
+    public void notifyDataSetChanged()
+    {
         Collections.sort(data);
         super.notifyDataSetChanged();
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, ViewGroup parent)
+    {
 
         View view;
         final ListItemData lid = getItem(position);
@@ -61,29 +70,39 @@ public class CustomAdapter extends ArrayAdapter<ListItemData> {
         TextView title = (TextView) view.findViewById(R.id.item_text);
         title.setText(lid.item);
         final int i = position;
-        title.setOnClickListener(new View.OnClickListener() {
+        title.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
-                if (lid.checked) {
+            public void onClick(View v)
+            {
+                if (lid.checked)
+                {
                     lid.checked = false;
-                } else {
+                }
+                else
+                {
                     lid.checked = true;
                     showToast(data.get(i).item);
                 }
                 notifyDataSetChanged();
             }
         });
-        if (lid.checked) {
+        if (lid.checked)
+        {
             title.setTextColor(Color.GRAY);
-        } else {
+        }
+        else
+        {
             title.setTextColor(Color.WHITE);
         }
         CheckBox check = (CheckBox) view.findViewById(R.id.checkBox);
         check.setChecked(lid.checked);
 
-        check.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        check.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
+            {
                 data.get(i).checked = isChecked;
                 notifyDataSetChanged();
             }
@@ -91,7 +110,9 @@ public class CustomAdapter extends ArrayAdapter<ListItemData> {
 
         return view;
     }
-    public void showToast(String message) {
+
+    public void showToast(String message)
+    {
         Toast toast = Toast.makeText(this.getContext(), message, Toast.LENGTH_SHORT);
         toast.setDuration(1);
         toast.show();
