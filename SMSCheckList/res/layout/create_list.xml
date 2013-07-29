@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
 
     <LinearLayout
         android:orientation="vertical"
@@ -9,14 +12,20 @@
 
         <EditText
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:inputType="textMultiLine"
             android:ems="10"
             android:id="@+id/textToParse"
             android:layout_gravity="left|center_vertical"
             android:layout_weight="30"
             android:editable="true"
-            android:enabled="true" />
+            android:enabled="true"
+            android:background="@android:drawable/screen_background_dark"
+            android:gravity="left|top"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:textColor="@android:color/white"
+            />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -32,7 +41,7 @@
                 android:layout_gravity="center_horizontal|top"
                 android:id="@+id/btnCreate"
                 android:layout_weight="1"
-                android:onClick="btnCreate_click" />
+                android:onClick="btnCreate_click"/>
 
             <Button
                 android:layout_width="fill_parent"
@@ -41,7 +50,7 @@
                 android:id="@+id/btnPaste"
                 android:layout_gravity="center_horizontal|top"
                 android:layout_weight="1"
-                android:onClick="btnPaste_click" />
+                android:onClick="btnPaste_click"/>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
