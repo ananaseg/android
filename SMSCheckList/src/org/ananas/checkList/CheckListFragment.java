@@ -22,10 +22,12 @@ import java.util.Collections;
  */
 public class CheckListFragment extends Fragment {
     ArrayList<ListItemData> _lid;
+    ArrayList<ListItemData> _cid;
     ClipboardManager clipboard;
 
-    public CheckListFragment(ArrayList<ListItemData> listItemData) {
+    public CheckListFragment(ArrayList<ListItemData> listItemData, ArrayList<ListItemData> cartItemData) {
         _lid = listItemData;
+        _cid = cartItemData;
     }
 
     @Override
@@ -34,7 +36,7 @@ public class CheckListFragment extends Fragment {
 
         // находим список
         ListView lvMain = (ListView) rootView.findViewById(R.id.checkListView);
-        setList(getActivity().getApplicationContext(), lvMain, _lid);
+        setList(getActivity().getApplicationContext(), lvMain, _lid, _cid);
         clipboard = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
         if (clipboard.hasText()) {
             pasteData(_lid, false);
@@ -42,11 +44,11 @@ public class CheckListFragment extends Fragment {
         return rootView;
     }
 
-    public void setList(Context context, ListView lv, ArrayList<ListItemData> lid) {
+    public void setList(Context context, ListView lv, ArrayList<ListItemData> lid, ArrayList<ListItemData> cid) {
         if (lv != null) {
             Collections.sort(lid);
             // создаем адаптер
-            ArrayAdapter<ListItemData> adapter = new CustomAdapter(context, R.layout.checked_list_item, R.id.item_text, lid);
+            ArrayAdapter<ListItemData> adapter = new CheckListAdapter(context, R.layout.checked_list_item, R.id.item_text, lid, cid);
             // присваиваем адаптер списку
             lv.setAdapter(adapter);
         }

@@ -36,6 +36,7 @@ public class TabbedCheckList extends FragmentActivity implements ActionBar.TabLi
     ListView lvMain;
     ClipboardManager clipboard;
     private ArrayList<ListItemData> listItemData = new ArrayList<ListItemData>();
+    private ArrayList<ListItemData> cartItemData = new ArrayList<ListItemData>();
 
     final int DIALOG_PASTE = 1;
     final int DIALOG_CREATE = 2;
@@ -43,7 +44,11 @@ public class TabbedCheckList extends FragmentActivity implements ActionBar.TabLi
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tabs);
-        mAppSectionsPagerAdapter = new AppSectionsPagerAdapter(getSupportFragmentManager(), listItemData);
+        String[] tabNames = {"", "", ""};
+        tabNames[0] = getString(R.string.edit_list);
+        tabNames[1] = getString(R.string.check_list);
+        tabNames[2] = getString(R.string.cart_list);
+        mAppSectionsPagerAdapter = new AppSectionsPagerAdapter(tabNames, getSupportFragmentManager(), listItemData, cartItemData);
         final ActionBar actionBar = getActionBar();
         actionBar.setHomeButtonEnabled(false);
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
@@ -63,6 +68,14 @@ public class TabbedCheckList extends FragmentActivity implements ActionBar.TabLi
     @Override
     public void onTabSelected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
         mViewPager.setCurrentItem(tab.getPosition());
+        ListView checkList = (ListView) findViewById(R.id.checkListView);
+        ListView cartList = (ListView) findViewById(R.id.cartListView);
+        switch (tab.getPosition()) {
+            case (1):
+                checkList.invalidateViews();
+            case (2):
+                cartList.invalidateViews();
+        }
     }
 
     @Override
@@ -170,10 +183,10 @@ public class TabbedCheckList extends FragmentActivity implements ActionBar.TabLi
             switch (which) {
                 //положительная кнопка
                 case Dialog.BUTTON_POSITIVE:
-                    pasteData(listItemData, false);  // если согласились перезаписать данные, то вставляем их из буфера
+                    pasteData(listItemData, cartItemData, false);  // если согласились перезаписать данные, то вставляем их из буфера
                     break;
                 case Dialog.BUTTON_NEUTRAL:
-                    pasteData(listItemData, true);  // если согласились добавить данные, то вставляем их из буфера
+                    pasteData(listItemData, cartItemData, true);  // если согласились добавить данные, то вставляем их из буфера
                     break;
                 //негаитвная кнопка
                 case Dialog.BUTTON_NEGATIVE:
@@ -191,7 +204,7 @@ public class TabbedCheckList extends FragmentActivity implements ActionBar.TabLi
             switch (which) {
                 //положительная кнопка
                 case Dialog.BUTTON_POSITIVE:
-                    createData(listItemData);  // если согласились перезаписать данные, то вставляем их из буфера
+                    createData(listItemData, cartItemData);  // если согласились перезаписать данные, то вставляем их из буфера
                     break;
                 //негаитвная кнопка
                 case Dialog.BUTTON_NEGATIVE:
@@ -204,7 +217,8 @@ public class TabbedCheckList extends FragmentActivity implements ActionBar.TabLi
     /**
      * Вставка данных из буфера и формирование списка
      */
-    protected void pasteData(ArrayList<ListItemData> listItemData, boolean addText) {
+    protected void pasteData(ArrayList<ListItemData> listItemData, ArrayList<ListItemData> cartItemData, boolean addText) {
+        clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
         String pasteData = "";
         ClipData.Item item = null;
         EditText ed = (EditText) findViewById(R.id.textToParse);
@@ -226,17 +240,19 @@ public class TabbedCheckList extends FragmentActivity implements ActionBar.TabLi
             ed.setText(srcText);
             setListItems(listItemData, srcText);   //Создаем список
         }
+        cartItemData.clear();
         hideKeyboard();
     }
 
     /**
      * Создаем список из EditText
      */
-    protected void createData(ArrayList<ListItemData> listItemData) {
+    protected void createData(ArrayList<ListItemData> listItemData, ArrayList<ListItemData> cartItemData) {
         EditText ed = (EditText) findViewById(R.id.textToParse);
         String srcText = ed.getText().toString();
         ed.setText(srcText);
         setListItems(listItemData, srcText);   //Создаем список
+        cartItemData.clear();
         hideKeyboard();
     }
 
@@ -263,10 +279,14 @@ public class TabbedCheckList extends FragmentActivity implements ActionBar.TabLi
         if (lvMain != null) {
             lvMain.invalidateViews();
         }
+        lvMain = (ListView) findViewById(R.id.cartListView);
+        if (lvMain != null) {
+            lvMain.invalidateViews();
+        }
     }
 
     void hideKeyboard() {
-        ListView lvMain = (ListView) findViewById(R.id.checkListView);
+        lvMain = (ListView) findViewById(R.id.checkListView);
         if (lvMain != null) {
             lvMain.requestFocus(View.FOCUS_DOWN);
             InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
